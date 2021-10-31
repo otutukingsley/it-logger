@@ -1,12 +1,16 @@
 import React, { useEffect, Fragment } from 'react'
 import Searchbar from './components/layouts/Searchbar'
-import Logger from './components/Logs/Logger'
+import Logger from './components/logs/Logger'
 import AddBtn from './components/layouts/AddBtn'
-import AddLogModal from './components/Logs/AddLogModal'
-import EditLogModal from './components/Logs/EditLogModal'
+import AddLogModal from './components/logs/AddLogModal'
+import EditLogModal from './components/logs/EditLogModal'
+import AddTechModal from './components/techs/AddTechModal'
+import TechListModal from './components/techs/TechsListModal'
 import 'materialize-css/dist/css/materialize.min.css'
 import M from 'materialize-css/dist/js/materialize.min.js'
 import './App.css'
+
+
 
 
 const App = () => {
@@ -21,6 +25,8 @@ const App = () => {
         <AddBtn />
         <AddLogModal />
         <EditLogModal />
+        <AddTechModal/>
+        <TechListModal/>
         <Logger />
       </div>
     </Fragment>

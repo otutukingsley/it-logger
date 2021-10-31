@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import LoggerItem from './LoggerItem'
-import PreLoader from '../layouts/PreLoader';
+import { PreLoader } from '../layouts/PreLoader'
 
 const Logger = () => {
   const [logs, setLogs] = useState([])
@@ -18,7 +18,7 @@ const Logger = () => {
   }, [])
 
   if (loading) {
-    return <PreLoader/>
+    return <PreLoader />
   }
 
   return (
@@ -29,7 +29,7 @@ const Logger = () => {
       {!loading && logs.length === 0 ? (
         <p className="center">No logs to show...</p>
       ) : (
-        logs.map((log) => <LoggerItem key={log.id} log={log}/>)
+        logs.map((log) => <LoggerItem key={log.id} log={log} />)
       )}
     </ul>
   )
