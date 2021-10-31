@@ -7,3 +7,7 @@
 .nav__style {
   margin-bottom: 30px;
 }
+.modal__style {
+  width: 75%;
+  height: 75%;
+}
