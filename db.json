@@ -2,24 +2,17 @@
   "logs": [
     {
       "id": 1,
-      "message": "Changed hard drive on workstation 005",
+      "message": "Add log b",
       "attention": false,
-      "date": "03-02-2019",
-      "tech": "Sam Smith"
+      "tech": "John Doe",
+      "date": "2021-11-03T01:33:44.640Z"
     },
     {
       "id": 2,
-      "message": "Sidebar not responsive 002",
-      "attention": true,
-      "date": "04-03-2019",
-      "tech": "John Smith"
-    },
-    {
-      "id": 3,
-      "message": "Changed memory on workstation 050",
+      "message": "Hello World 2",
       "attention": false,
-      "date": "03-02-2019",
-      "tech": "Sam Wilson"
+      "tech": "Johnson Lee",
+      "date": "2021-11-03T01:36:07.578Z"
     }
   ],
   "techs": [
