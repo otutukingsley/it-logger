@@ -1,40 +1,37 @@
 {
   "logs": [
     {
-      "id": 1,
-      "message": "Add log b",
-      "attention": false,
-      "tech": "John Doe",
-      "date": "2021-11-03T01:33:44.640Z"
+      "message": "Hello World",
+      "attention": true,
+      "tech": "Richie otutu",
+      "date": "2021-11-03T23:31:31.098Z",
+      "id": 1
     },
     {
-      "id": 2,
-      "message": "Hello World 2",
-      "attention": false,
-      "tech": "Johnson Lee",
-      "date": "2021-11-03T01:36:07.578Z"
+      "message": "put request",
+      "attention": true,
+      "tech": "Xu Chao",
+      "date": "2021-11-03T23:32:14.405Z",
+      "id": 2
+    },
+    {
+      "message": "Add log",
+      "attention": true,
+      "tech": "Xu Chao",
+      "date": "2021-11-03T23:33:41.758Z",
+      "id": 3
     }
   ],
   "techs": [
     {
-      "id": 1,
-      "firstName": "Sam",
-      "lastName": "Smith"
+      "firstName": "Xu",
+      "lastName": "Chao",
+      "id": 1
     },
     {
-      "id": 2,
-      "firstName": "John",
-      "lastName": "Smith"
-    },
-    {
-      "id": 3,
-      "firstName": "Sam",
-      "lastName": "Wilson"
-    },
-    {
-      "firstName": "Kelly",
-      "lastName": "wilson",
-      "id": 4
+      "firstName": "Richie",
+      "lastName": "otutu",
+      "id": 2
     }
   ]
 }

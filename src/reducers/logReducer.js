@@ -7,6 +7,7 @@ import {
   SET_CURRENT,
   CLEAR_CURRENT,
   UPDATE_LOG,
+  SEARCH_LOGS,
 } from '../actions/types'
 
 const initialState = {
@@ -42,9 +43,15 @@ const LogReducer = (state = initialState, action) => {
     case UPDATE_LOG:
       return {
         ...state,
-        logs: state.logs.map(log =>
-          log.id === action.payload.id ? action.payload : log
-        )
+        logs: state.logs.map((log) =>
+          log.id === action.payload.id ? action.payload : log,
+        ),
+      }
+
+    case SEARCH_LOGS:
+      return {
+        ...state,
+        logs: action.payload,
       }
 
     case SET_CURRENT:
@@ -66,7 +73,6 @@ const LogReducer = (state = initialState, action) => {
       }
 
     case LOGS_ERROR:
-      console.error(action.payload)
       return {
         ...state,
         error: action.payload,

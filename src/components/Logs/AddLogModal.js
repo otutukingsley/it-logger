@@ -1,13 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { addLog } from '../../actions/logActions'
+import { getTechs } from '../../actions/techActions'
 import M from 'materialize-css/dist/js/materialize.min.js'
 
-const AddLogModal = ({ addLog }) => {
+const AddLogModal = ({ addLog, techObj, getTechs }) => {
   const [message, setMessage] = useState('')
   const [attention, setAttention] = useState(false)
   const [tech, setTech] = useState('')
+
+  const { loading, techs } = techObj
+
+  useEffect(() => {
+    getTechs()
+    //eslint-disable-next-line
+  }, [])
 
   const onSubmit = () => {
     if (message === '' || tech === '') {
@@ -20,7 +28,7 @@ const AddLogModal = ({ addLog }) => {
         date: new Date(),
       }
 
-      addLog(newLog);
+      addLog(newLog)
       M.toast({ html: `Log added by ${tech}`, classes: 'blue' })
       //Clear fields
       setMessage('')
@@ -57,9 +65,21 @@ const AddLogModal = ({ addLog }) => {
               <option value="" disabled>
                 Select Technician
               </option>
-              <option value="John Doe">John Doe</option>
-              <option value="Johnson Lee">Johnson Lee</option>
-              <option value="Revemon Block">Revemon Block</option>
+              {loading || techs === null ? (
+                <option value="" disabled>
+                  loading...
+                </option>
+              ) : !loading && techs.length === 0 ? (
+                <option value="" disabled>
+                  No techs found
+                </option>
+              ) : (
+                techs.map((tech) => (
+                  <option value={`${tech.firstName} ${tech.lastName}`}>
+                    {tech.firstName} {tech.lastName}
+                  </option>
+                ))
+              )}
             </select>
           </div>
         </div>
@@ -97,6 +117,11 @@ const AddLogModal = ({ addLog }) => {
 
 AddLogModal.propTypes = {
   addLog: PropTypes.func.isRequired,
+  techObj: PropTypes.object,
 }
 
-export default connect(null, { addLog })(AddLogModal)
+const mapStateToProps = (state) => ({
+  techObj: state.tech,
+})
+
+export default connect(mapStateToProps, { addLog, getTechs })(AddLogModal)

@@ -1,20 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
+import { getTechs } from '../../actions/techActions'
 import TechItem from './TechItem'
 import { CircleLoader } from '../layouts/PreLoader'
+import PropTypes from 'prop-types'
 
-const TechListModal = () => {
-  const [techs, setTechs] = useState([])
-  const [loading, setLoading] = useState(false)
+const TechListModal = ({ techsObj, getTechs }) => {
+  const { loading, techs } = techsObj
 
   useEffect(() => {
-    const getTechs = async () => {
-      setLoading(true)
-      const res = await fetch('/techs')
-      const data = await res.json()
-      setTechs(data)
-      setLoading(false)
-    }
     getTechs()
+    //eslint-disable-next-line
   }, [])
 
   return (
@@ -22,10 +18,14 @@ const TechListModal = () => {
       <div className="modal-content">
         <h4>Technician List</h4>
         <ul className="collection">
-          {loading ? (
+          {loading || techs === null ? (
             <CircleLoader />
+          ) : !loading && techs.length === 0 ? (
+            <p className="center">No techs to show</p>
           ) : (
-            techs.map((tech) => <TechItem key={tech.id} tech={tech} />)
+            techs.map((eachTech) => (
+              <TechItem key={eachTech.id} tech={eachTech} />
+            ))
           )}
         </ul>
       </div>
@@ -33,4 +33,13 @@ const TechListModal = () => {
   )
 }
 
-export default TechListModal;
+TechListModal.propTypes = {
+  techsObj: PropTypes.object.isRequired,
+  getTechs: PropTypes.func.isRequired,
+}
+
+const mapStateToProps = (state) => ({
+  techsObj: state.tech,
+})
+
+export default connect(mapStateToProps, { getTechs })(TechListModal)
