@@ -6,13 +6,13 @@ import PropTypes from 'prop-types'
 
 const EditLogModal = ({ updateLog, current, clearCurrent }) => {
   const [message, setMessage] = useState('')
-  const [attention, setAttention] = useState(false)
+  const [type, setType] = useState('Needs attention')
   const [tech, setTech] = useState('')
 
   useEffect(() => {
     if (current && current !== null) {
       setMessage(current.message)
-      setAttention(current.attention)
+      setType(current.type)
       setTech(current.tech)
     }
   }, [current])
@@ -24,20 +24,21 @@ const EditLogModal = ({ updateLog, current, clearCurrent }) => {
       const updatedLog = {
         id: current.id,
         message,
-        attention,
+        type,
         tech,
         date: new Date(),
       }
-
-      console.log(updatedLog)
-
+      
       updateLog(updatedLog)
 
-      M.toast({ html: 'Tech and Message Added!!', classes: 'blue' })
+      M.toast({ html: 'Tech and Message Updated!!', classes: 'blue' })
+
+      //Clear current message
+      clearCurrent()
 
       //Clear fields
       setMessage('')
-      setAttention(false)
+      setType('Needs attention')
       setTech('')
       clearCurrent()
     }
@@ -79,13 +80,40 @@ const EditLogModal = ({ updateLog, current, clearCurrent }) => {
             <p>
               <label>
                 <input
-                  type="checkbox"
-                  className="filled-in"
-                  checked={attention}
-                  value={attention}
-                  onChange={(e) => setAttention((prev) => !prev)}
+                  type="radio"
+                  name="type"
+                  className="filled-in red-text  with-gap"
+                  checked={type === 'Needs attention'}
+                  value="Needs attention"
+                  onChange={(e) => setType(e.target.value)}
                 />
                 <span>Needs Attention</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input
+                  type="radio"
+                  name="type"
+                  className="filled-in yellow-text  with-gap"
+                  checked={type === 'In progress'}
+                  value="In progress"
+                  onChange={(e) => setType(e.target.value)}
+                />
+                <span>In progress</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input
+                  type="radio"
+                  name="type"
+                  className="filled-in green-text with-gap"
+                  checked={type === 'Done'}
+                  value="Done"
+                  onChange={(e) => setType(e.target.value)}
+                />
+                <span>Done</span>
               </label>
             </p>
           </div>

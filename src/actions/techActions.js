@@ -4,14 +4,14 @@ import {
   DELETE_TECH,
   TECHS_ERROR,
   SET_LOADING,
-} from '../actions/types'
+} from "../actions/types"
 
 // Get techs from server
 
 export const getTechs = () => async (dispatch, getState) => {
   try {
     setLoading()
-    const res = await fetch('/techs')
+    const res = await fetch("/techs")
     const data = await res.json()
 
     dispatch({
@@ -28,10 +28,10 @@ export const getTechs = () => async (dispatch, getState) => {
 
 export const addTech = (tech) => async (dispatch, getState) => {
   try {
-    const res = await fetch('/techs', {
-      method: 'POST',
+    const res = await fetch("/techs", {
+      method: "POST",
       body: JSON.stringify(tech),
-      headers: { 'Content-Type': 'application/json' },
+      headers: { "Content-Type": "application/json" },
     })
 
     const data = await res.json()
@@ -52,7 +52,7 @@ export const deleteTech = (id) => async (dispatch, getState) => {
   try {
     setLoading()
 
-    await fetch(`/techs/${id}`, { method: 'DELETE' })
+    await fetch(`/techs/${id}`, { method: "DELETE" })
 
     dispatch({
       type: DELETE_TECH,

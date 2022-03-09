@@ -1,37 +1,49 @@
 {
   "logs": [
     {
-      "message": "Hello World",
-      "attention": true,
-      "tech": "Richie otutu",
-      "date": "2021-11-03T23:31:31.098Z",
-      "id": 1
-    },
-    {
-      "message": "put request",
-      "attention": true,
-      "tech": "Xu Chao",
-      "date": "2021-11-03T23:32:14.405Z",
+      "message": "Boxing talk wednesday",
+      "type": "In progress",
+      "tech": "Max Kellerman",
+      "date": "2021-11-06T01:12:13.919Z",
       "id": 2
     },
     {
-      "message": "Add log",
-      "attention": true,
-      "tech": "Xu Chao",
-      "date": "2021-11-03T23:33:41.758Z",
+      "message": "Kendrick perkins ESPN talk ",
+      "type": "Needs attention",
+      "tech": "Sarah  Perkins",
+      "date": "2021-11-06T01:13:04.829Z",
       "id": 3
+    },
+    {
+      "message": "Add log",
+      "type": "Needs attention",
+      "tech": "Richie otutu",
+      "date": "2021-11-06T01:14:19.031Z",
+      "id": 4
+    },
+    {
+      "message": "boxing day 26",
+      "type": "In progress",
+      "tech": "Max Kellerman",
+      "date": "2021-11-08T22:27:37.716Z",
+      "id": 5
     }
   ],
   "techs": [
     {
-      "firstName": "Xu",
-      "lastName": "Chao",
+      "firstName": "Richie",
+      "lastName": "otutu",
       "id": 1
     },
     {
-      "firstName": "Richie",
-      "lastName": "otutu",
+      "firstName": "Sarah ",
+      "lastName": "Perkins",
       "id": 2
+    },
+    {
+      "firstName": "Max",
+      "lastName": "Kellerman",
+      "id": 3
     }
   ]
 }
