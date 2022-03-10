@@ -1,6 +1,6 @@
 import React, { useEffect, Fragment } from "react"
 import Searchbar from "./components/layouts/Searchbar"
-import Logger from "./components/logs/Logger"
+import LoggerHome from "./components/logs/LoggerHome"
 import AddBtn from "./components/layouts/AddBtn"
 import AddLogModal from "./components/logs/AddLogModal"
 import EditLogModal from "./components/logs/EditLogModal"
@@ -28,7 +28,7 @@ const App = () => {
           <EditLogModal />
           <AddTechModal />
           <TechListModal />
-          <Logger />
+          <LoggerHome />
         </div>
       </Fragment>
     </Provider>
