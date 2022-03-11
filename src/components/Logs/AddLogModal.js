@@ -14,6 +14,7 @@ const AddLogModal = ({ addLog, techObj, getTechs }) => {
 
   useEffect(() => {
     getTechs()
+    //eslint-disable-next-line
   }, [])
 
   const onSubmit = () => {

@@ -23,11 +23,11 @@ const LoggerItem = ({ log, deleteLog, setCurrent }) => {
           href="#edit-log-modal"
           className={`modal-trigger ${
             log.type === "Needs attention"
-              ? "red-text"
+              ? "red-t"
               : log.type === "In progress"
-              ? "yellow-text"
+              ? "yellow-t"
               : log.type === "Done"
-              ? "blue-text"
+              ? "blue-t"
               : ""
           }`}
         >

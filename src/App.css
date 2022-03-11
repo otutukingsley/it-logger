@@ -12,51 +12,56 @@
   height: 75%;
 }
 
-/* label > input[type='radio']:checked + * {
-  color: black;
-} */
-
-[type='radio']:checked + span:after,
-[type='radio'].red-text:checked + span:before,
-[type='radio'].red-text:checked + span:after {
-  border: 2px solid #f44336;
+[type="radio"]:checked + span:after,
+[type="radio"].red-text:checked + span:before,
+[type="radio"].red-text:checked + span:after {
+  border: 2px solid #ed0b0b;
 }
 
-[type='radio'].red-text:checked + span {
-  color: #f44336;
+[type="radio"].red-text:checked + span {
+  color: #ed0b0b;
 }
 
-[type='radio']:checked + span:after,
-[type='radio'].red-text:checked + span:after {
-  background-color: #f44336;
+[type="radio"]:checked + span:after,
+[type="radio"].red-text:checked + span:after {
+  background-color: #ed0b0b;
 }
 
-[type='radio']:checked + span:after,
-[type='radio'].green-text:checked + span:before,
-[type='radio'].green-text:checked + span:after {
+[type="radio"]:checked + span:after,
+[type="radio"].green-text:checked + span:before,
+[type="radio"].green-text:checked + span:after {
   border: 2px solid #2196f3;
 }
 
-[type='radio'].green-text:checked + span {
+[type="radio"].green-text:checked + span {
   color: #2196f3;
 }
 
-[type='radio']:checked + span:after,
-[type='radio'].green-text:checked + span:after {
+[type="radio"]:checked + span:after,
+[type="radio"].green-text:checked + span:after {
   background-color: #2196f3;
 }
 
-[type='radio']:checked + span:after,
-[type='radio'].yellow-text:checked + span:before,
-[type='radio'].yellow-text:checked + span:after {
-  border: 2px solid #ffeb3b;
+[type="radio"]:checked + span:after,
+[type="radio"].yellow-text:checked + span:before,
+[type="radio"].yellow-text:checked + span:after {
+  border: 2px solid #ffce3b;
 }
 
-[type='radio'].yellow-text:checked + span {
-  color: #ffeb3b;
+[type="radio"].yellow-text:checked + span {
+  color: #ffce3b;
 }
 
-[type='radio']:checked + span:after,
-[type='radio'].yellow-text:checked + span:after {
-  background-color: #ffeb3b;
+[type="radio"]:checked + span:after,
+[type="radio"].yellow-text:checked + span:after {
+  background-color: #ffce3b;
+}
+.red-t {
+  color: #ed0b0b;
+}
+.yellow-t {
+  color: #ffce3b;
+}
+.blue-t {
+  color: #2196f3;
 }
