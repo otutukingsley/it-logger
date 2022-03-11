@@ -5,7 +5,7 @@ import AddLogModal from "./components/logs/AddLogModal"
 import EditLogModal from "./components/logs/EditLogModal"
 import AddTechModal from "./components/techs/AddTechModal"
 import TechListModal from "./components/techs/TechsListModal"
-import LoggerHome from "./components/logs/LoggerHome"
+import Log from "./components/logs/Log"
 
 import "materialize-css/dist/css/materialize.min.css"
 import M from "materialize-css/dist/js/materialize.min.js"
@@ -20,7 +20,7 @@ const App = () => {
     <Fragment>
       <Searchbar />
       <div className="container">
-        <LoggerHome />
+        <Log />
         <AddBtn />
         <AddLogModal />
         <EditLogModal />

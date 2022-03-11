@@ -5,7 +5,7 @@ import { PreLoader } from "../layouts/PreLoader"
 import PropTypes from "prop-types"
 import { getLogs } from "../../actions/logActions"
 
-const LoggerHome = ({ logObj, getLogs }) => {
+const Log = ({ logObj, getLogs }) => {
   const { logs, loading } = logObj
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const LoggerHome = ({ logObj, getLogs }) => {
   )
 }
 
-LoggerHome.propTypes = {
+Log.propTypes = {
   logObj: PropTypes.object.isRequired,
   getLogs: PropTypes.func.isRequired,
 }
@@ -40,4 +40,4 @@ const mapStateToProps = (state) => ({
   logObj: state.log,
 })
 
-export default connect(mapStateToProps, { getLogs })(LoggerHome)
+export default connect(mapStateToProps, { getLogs })(Log)
