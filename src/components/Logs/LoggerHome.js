@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
-import { connect } from 'react-redux'
-import LoggerItem from './LoggerItem'
-import { PreLoader } from '../layouts/PreLoader'
-import PropTypes from 'prop-types'
-import { getLogs } from '../../actions/logActions'
+import React, { useEffect } from "react"
+import { connect } from "react-redux"
+import LoggerItem from "./LoggerItem"
+import { PreLoader } from "../layouts/PreLoader"
+import PropTypes from "prop-types"
+import { getLogs } from "../../actions/logActions"
 
-const Logger = ({ logObj, getLogs }) => {
+const LoggerHome = ({ logObj, getLogs }) => {
   const { logs, loading } = logObj
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const Logger = ({ logObj, getLogs }) => {
   )
 }
 
-Logger.propTypes = {
+LoggerHome.propTypes = {
   logObj: PropTypes.object.isRequired,
   getLogs: PropTypes.func.isRequired,
 }
@@ -40,4 +40,4 @@ const mapStateToProps = (state) => ({
   logObj: state.log,
 })
 
-export default connect(mapStateToProps, { getLogs })(Logger)
+export default connect(mapStateToProps, { getLogs })(LoggerHome)
